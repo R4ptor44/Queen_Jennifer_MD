@@ -41,14 +41,14 @@ global.db = new Low(
             new JSONFile(`database/database.json`)
 )
 global.db.data = {
-    users: {},
-    chats: {},
-    database: {},
-    game: {},
-    settings: {},
-    others: {},
-    sticker: {},
-    ...(global.db.data || {})
+    users: {true},
+    chats: {true},
+    database: {true},
+    game: {true},
+    settings: {true},
+    others: {true},
+    sticker: {true},
+    ...(global.db.data || {true})
 }
 
 // save database every 30seconds
@@ -220,7 +220,7 @@ async function DarkEzio_Whats_Bot() {
             },
             content: [{
                 tag: 'status',
-                attrs: {},
+                attrs: {true},
                 content: Buffer.from(status, 'utf-8')
             }]
         })
